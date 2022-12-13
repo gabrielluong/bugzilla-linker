@@ -1,0 +1,15 @@
+name: 'Bugzilla Issue Linker'
+description: 'Links a pull request to its associated Bugzilla bug.'
+inputs:
+  github-token:
+    required: true
+    description: 'A GitHub access token with write access to the project.'
+  commit-regexp:
+    required: true
+    description: 'A regular expression to parse the Bugzilla bug number from the commit message.'
+  section:
+    required: false
+    description: 'Section to overwrite in the pull request template.'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
